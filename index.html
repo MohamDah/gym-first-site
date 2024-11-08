@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkfont: '#191E3B',
+                    }
+                }
+            }
+        }
+    </script>
     <title>Gym First Site</title>
 </head>
-<body>
-    <header class="w-full bg-gray-200 h-32 flex items-center justify-center">
-        <h1 class="text-3xl font-bold">
-            This is a header
-        </h1>
+
+<body class="text-darkfont">
+    <img class="absolute -z-10" src="./images/2022-06-05_Vrbo_APFT2_Barcelona_Therin_House_2_4605_2.jpeg"
+        alt="background img">
+    <header class="w-full bg-white h-[4.3rem] flex items-center px-20">
+        <img src="./images/logo.svg" alt="logo">
+
+        <div class="ml-auto flex gap-1 border py-1 px-3 rounded-full hover:bg-emerald-100">
+            <img class="w-5"
+            src="./images/downloadIcon.svg" alt="download icon">
+            <p class="font-medium text-[.95rem]">Download the app</p>
+        </div>
     </header>
     <main class="w-2/3 mx-auto mt-10 rounded-xl bg-blue-200 h-64 flex items-center justify-center">
         <h1 class="text-4xl font-bold w-full text-center">Here is the content</h1>
     </main>
 </body>
+
 </html>
