@@ -9,6 +9,12 @@
         * {
             box-sizing: border-box;
         }
+        #popular::-webkit-scrollbar {
+            width: thin;
+        }
+        #popular {
+            scrollbar-width: thin;
+        }
     </style>
     <script>
         tailwind.config = {
@@ -27,16 +33,15 @@
 
 <body class="text-darkfont">
     <div class="w-full max-w-full h-[40rem] absolute -z-10 overflow-hidden">
-        <img class="absolute -z-10 min-w-[116rem] bottom-0 -translate-x-1/2 left-1/2" src="./images/2022-06-05_Vrbo_APFT2_Barcelona_Therin_House_2_4605_2.jpeg"
-        alt="background img">
+        <img class="absolute -z-10 min-w-[116rem] bottom-0 -translate-x-1/2 left-1/2"
+            src="./images/2022-06-05_Vrbo_APFT2_Barcelona_Therin_House_2_4605_2.jpeg" alt="background img">
         <div class="absolute h-full w-full bg-black opacity-40"></div>
     </div>
     <header class="w-full bg-white h-[4.3rem] flex items-center px-20 gap-3">
         <img src="./images/logo.svg" alt="logo">
 
         <a class="ml-auto flex gap-1 border py-1 px-3 rounded-full hover:bg-slate-100 cursor-pointer">
-            <img class="w-5"
-            src="./images/downloadIcon.svg" alt="download icon">
+            <img class="w-5" src="./images/downloadIcon.svg" alt="download icon">
             <p class="font-medium text-[.9rem]">Download the app</p>
         </a>
         <a class="font-medium text-[.95rem] cursor-pointer p-2">Travel Planner</a>
@@ -46,46 +51,74 @@
         <a class="font-medium text-[.95rem] cursor-pointer p-2">Register</a>
     </header>
 
-    <main class="w-full xl:px-28 flex flex-col items-center">
-        <div class="h-[35rem] w-11/12 flex flex-col mt-44">
+    <main class="w-full px-4 xl:px-24 flex flex-col">
+        <div class="h-[25rem] w-11/12 flex flex-col mt-44 self-center">
             <h1 class="text-6xl text-white font-semibold">Everything is fine, you book with FeWo-direkt</h1>
             <div class="w-full h-20 bg-lightbg p-3.5 rounded-2xl mt-8 flex gap-4 items-center">
 
-                <div class="border border-gray-500 w-1/3 h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
-                    <img class="w-6 text-darkfont"
-                    src="./images/mapPin.svg" alt="icon">
+                <div
+                    class="border border-gray-500 w-1/3 h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
+                    <img class="w-6 text-darkfont" src="./images/mapPin.svg" alt="icon">
                     <p>Where should we go?</p>
                 </div>
 
-                <div class="border border-gray-500 w-1/3 h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
-                    <img class="w-6 text-darkfont"
-                    src="./images/calendar.svg" alt="icon">
+                <div
+                    class="border border-gray-500 w-1/3 h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
+                    <img class="w-6 text-darkfont" src="./images/calendar.svg" alt="icon">
                     <div>
                         <p class="leading-none text-xs">Date</p>
                         <p>Nov. 22 - Nov. 29</p>
                     </div>
                 </div>
 
-                <div class="border border-gray-500 w-1/3 h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
-                    <img class="w-6 text-darkfont"
-                    src="./images/person.svg" alt="icon">
+                <div
+                    class="border border-gray-500 w-1/3 h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
+                    <img class="w-6 text-darkfont" src="./images/person.svg" alt="icon">
                     <div>
                         <p class="leading-none text-xs">Guests</p>
                         <p>2 travelers</p>
                     </div>
                 </div>
-                <button class="min-w-[4.5rem] h-full bg-darkfont text-white font-mono font-bold rounded-full text-lg hover:opacity-65">Seek</button>
+                <button
+                    class="min-w-[4.5rem] h-full bg-darkfont text-white font-mono font-bold rounded-full text-lg hover:opacity-65">Seek</button>
             </div>
         </div>
 
-        <div>
-            <h2>Popular travel destinations</h2>
-            <div>
-                <img src="./images/kigali.png" alt="">
-                <p>Kigali</p>
+        <h2 class="mt-16 text-3xl font-medium">Popular travel destinations</h2>
+        <div id="popular" class="mt-8 w-full flex gap-4 overflow-x-scroll">
+
+            <div class="min-w-64 overflow-hidden rounded-xl relative aspect-video border">
+                <img class="absolute -z-10 bottom-6" src="./images/kigali.png" alt="location image">
+                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-medium">Kigali</p>
             </div>
+
+            <div class="min-w-64 overflow-hidden rounded-xl relative aspect-video border">
+                <img class="absolute -z-10" src="./images/paris.png" alt="location image">
+                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-medium">Paris</p>
+            </div>
+
+            <div class="min-w-64 overflow-hidden rounded-xl relative aspect-video border">
+                <img class="absolute -z-10" src="./images/nairobi.png" alt="location image">
+                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-medium">Nairobi</p>
+            </div>
+
+            <div class="min-w-64 overflow-hidden rounded-xl relative aspect-video border">
+                <img class="absolute -z-10" src="./images/dubai.png" alt="location image">
+                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-medium">Dubai</p>
+            </div>
+
+            <div class="min-w-64 overflow-hidden rounded-xl relative aspect-video border">
+                <img class="absolute -z-10" src="./images/gisenyi.png" alt="location image">
+                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-medium">Gisenyi</p>
+            </div>
+
         </div>
+
+        <h2 class="mt-10">AMONGUS</h2>
     </main>
+
+
+    <script src="./index.js"></script>
 </body>
 
 </html>
