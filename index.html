@@ -9,10 +9,10 @@
         * {
             box-sizing: border-box;
         }
-        #popular::-webkit-scrollbar {
+        .no-scroll::-webkit-scrollbar {
             width: thin;
         }
-        #popular {
+        .no-scroll {
             scrollbar-width: thin;
         }
     </style>
@@ -31,39 +31,41 @@
     <title>Gym First Site</title>
 </head>
 
-<body class="text-darkfont">
+<body class="text-darkfont cursor-default">
     <div class="w-full max-w-full h-[40rem] absolute -z-10 overflow-hidden">
         <img class="absolute -z-10 min-w-[116rem] bottom-0 -translate-x-1/2 left-1/2"
             src="./images/2022-06-05_Vrbo_APFT2_Barcelona_Therin_House_2_4605_2.jpeg" alt="background img">
         <div class="absolute h-full w-full bg-black opacity-40"></div>
     </div>
-    <header class="w-full bg-white h-[4.3rem] flex items-center px-20 gap-3">
-        <img src="./images/logo.svg" alt="logo">
+    <header class="w-full bg-white h-[4.3rem] flex items-center px-5 md:px-10 lg:px-20 gap-3">
+        <img class="mr-auto" src="./images/logo.svg" alt="logo">
 
-        <a class="ml-auto flex gap-1 border py-1 px-3 rounded-full hover:bg-slate-100 cursor-pointer">
+        <a class=" sm:flex gap-1 border py-1 px-3 rounded-full hover:bg-slate-100 cursor-pointer hidden ">
             <img class="w-5" src="./images/downloadIcon.svg" alt="download icon">
             <p class="font-medium text-[.9rem]">Download the app</p>
         </a>
-        <a class="font-medium text-[.95rem] cursor-pointer p-2">Travel Planner</a>
-        <a class="font-medium text-[.95rem] cursor-pointer p-2">Register Accommodation</a>
-        <a class="font-medium text-[.95rem] cursor-pointer p-2">Help</a>
-        <a class="font-medium text-[.95rem] cursor-pointer p-2">My Travels</a>
-        <a class="font-medium text-[.95rem] cursor-pointer p-2">Register</a>
+        <a class="font-medium text-[.95rem] cursor-pointer p-2 hidden lg:block">Travel Planner</a>
+        <a class="font-medium text-[.95rem] cursor-pointer p-2 hidden lg:block">Register Accommodation</a>
+        <a class="font-medium text-[.95rem] cursor-pointer p-2 hidden md:block">Help</a>
+        <a class="font-medium text-[.95rem] cursor-pointer p-2 hidden sm:block">My Travels</a>
+        <a class="font-medium text-[.95rem] cursor-pointer p-2 hidden sm:block">Register</a>
+        <img class="w-10 p-2 lg:hidden" src="./images/hamburger.svg" alt="hamburgur icon">
+        
     </header>
 
-    <main class="w-full px-4 xl:px-24 flex flex-col">
-        <div class="h-[25rem] w-11/12 flex flex-col mt-44 self-center">
-            <h1 class="text-6xl text-white font-semibold">Everything is fine, you book with FeWo-direkt</h1>
-            <div class="w-full h-20 bg-lightbg p-3.5 rounded-2xl mt-8 flex gap-4 items-center">
+    <main class="w-full max-w-[100rem] px-4 xl:px-24 flex flex-col mx-auto">
+        <div class="h-[25rem] w-11/12 flex flex-col mt-28 sm:mt-44 self-center">
+            <h1 class="text-4xl sm:text-6xl text-white font-semibold">Everything is fine, you book with FeWo-direkt</h1>
+            <div class="w-full sm:h-20 bg-lightbg p-3.5 rounded-2xl mt-8 flex gap-4 sm:items-center flex-col sm:flex-row items-stretch">
 
                 <div
-                    class="border border-gray-500 w-1/3 h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
+                    class="border border-gray-500 sm:w-1/3 h-20 sm:h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
                     <img class="w-6 text-darkfont" src="./images/mapPin.svg" alt="icon">
                     <p>Where should we go?</p>
                 </div>
 
                 <div
-                    class="border border-gray-500 w-1/3 h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
+                    class="border border-gray-500 sm:w-1/3 h-20 sm:h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
                     <img class="w-6 text-darkfont" src="./images/calendar.svg" alt="icon">
                     <div>
                         <p class="leading-none text-xs">Date</p>
@@ -72,7 +74,7 @@
                 </div>
 
                 <div
-                    class="border border-gray-500 w-1/3 h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
+                    class="border border-gray-500 sm:w-1/3 h-20 sm:h-full rounded-lg flex px-3 gap-2 items-center cursor-text overflow-hidden whitespace-nowrap text-ellipsis">
                     <img class="w-6 text-darkfont" src="./images/person.svg" alt="icon">
                     <div>
                         <p class="leading-none text-xs">Guests</p>
@@ -85,36 +87,155 @@
         </div>
 
         <h2 class="mt-16 text-3xl font-medium">Popular travel destinations</h2>
-        <div id="popular" class="mt-8 w-full flex gap-4 overflow-x-scroll">
+        <div class="no-scroll mt-8 w-full flex gap-4 overflow-x-scroll">
 
-            <div class="min-w-64 overflow-hidden rounded-xl relative aspect-video border">
+            <div class="min-w-[16.5rem] overflow-hidden rounded-xl relative aspect-video border cursor-pointer">
                 <img class="absolute -z-10 bottom-6" src="./images/kigali.png" alt="location image">
-                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-medium">Kigali</p>
+                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-semibold">Kigali</p>
             </div>
 
-            <div class="min-w-64 overflow-hidden rounded-xl relative aspect-video border">
+            <div class="min-w-[16.5rem] overflow-hidden rounded-xl relative aspect-video border cursor-pointer">
                 <img class="absolute -z-10" src="./images/paris.png" alt="location image">
-                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-medium">Paris</p>
+                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-semibold">Paris</p>
             </div>
 
-            <div class="min-w-64 overflow-hidden rounded-xl relative aspect-video border">
+            <div class="min-w-[16.5rem] overflow-hidden rounded-xl relative aspect-video border cursor-pointer">
                 <img class="absolute -z-10" src="./images/nairobi.png" alt="location image">
-                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-medium">Nairobi</p>
+                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-semibold">Nairobi</p>
             </div>
 
-            <div class="min-w-64 overflow-hidden rounded-xl relative aspect-video border">
+            <div class="min-w-[16.5rem] overflow-hidden rounded-xl relative aspect-video border cursor-pointer">
                 <img class="absolute -z-10" src="./images/dubai.png" alt="location image">
-                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-medium">Dubai</p>
+                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-semibold">Dubai</p>
             </div>
 
-            <div class="min-w-64 overflow-hidden rounded-xl relative aspect-video border">
+            <div class="min-w-[16.5rem] overflow-hidden rounded-xl relative aspect-video border cursor-pointer">
                 <img class="absolute -z-10" src="./images/gisenyi.png" alt="location image">
-                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-medium">Gisenyi</p>
+                <p class="absolute bottom-0 w-full bg-white h-10 flex items-center pl-3 font-semibold">Gisenyi</p>
             </div>
 
         </div>
 
-        <h2 class="mt-10">AMONGUS</h2>
+        <h2 class="mt-10 text-3xl font-medium">Find accommodations to suit your taste</h2>
+        <div class="no-scroll mt-8 w-full flex gap-4 overflow-x-scroll">
+            <div class="min-w-[14.4rem] overflow-hidden rounded-xl relative aspect-[4.7/6] border cursor-pointer">
+                <img class="absolute -z-10 top-0" src="./images/holidayhome.png" alt="location image">
+                <div class="w-full h-full bg-gradient-to-t from-black to-30% opacity-50"></div>
+                <p class="absolute bottom-0 text-white p-2 font-semibold">Holiday Home</p>
+            </div>
+
+            <div class="min-w-[14.4rem] overflow-hidden rounded-xl relative aspect-[4.7/6] border cursor-pointer">
+                <img class="absolute -z-10 top-0" src="./images/holidayapartment.png" alt="location image">
+                <div class="w-full h-full bg-gradient-to-t from-black to-30% opacity-50"></div>
+                <p class="absolute bottom-0 text-white p-2 font-semibold">Holiday Apartment</p>
+            </div>
+            
+            <div class="min-w-[14.4rem] overflow-hidden rounded-xl relative aspect-[4.7/6] border cursor-pointer">
+                <img class="absolute -z-10 top-0" src="./images/holidaycottage.png" alt="location image">
+                <div class="w-full h-full bg-gradient-to-t from-black to-30% opacity-50"></div>
+                <p class="absolute bottom-0 text-white p-2 font-semibold">Holiday Cottage</p>
+            </div>
+
+            <div class="min-w-[14.4rem] overflow-hidden rounded-xl relative aspect-[4.7/6] border cursor-pointer">
+                <img class="absolute -z-10 top-0" src="./images/countryhouse.png" alt="location image">
+                <div class="w-full h-full bg-gradient-to-t from-black to-30% opacity-50"></div>
+                <p class="absolute bottom-0 text-white p-2 font-semibold">Country House</p>
+            </div>
+
+            <div class="min-w-[14.4rem] overflow-hidden rounded-xl relative aspect-[4.7/6] border cursor-pointer">
+                <img class="absolute -z-10 top-0" src="./images/villa.png" alt="location image">
+                <div class="w-full h-full bg-gradient-to-t from-black to-30% opacity-50"></div>
+                <p class="absolute bottom-0 text-white p-2 font-semibold">Villa</p>
+            </div>
+
+            <div class="min-w-[14.4rem] overflow-hidden rounded-xl relative aspect-[4.7/6] border cursor-pointer">
+                <img class="absolute -z-10 top-0" src="./images/chalet.png" alt="location image">
+                <div class="w-full h-full bg-gradient-to-t from-black to-30% opacity-50"></div>
+                <p class="absolute bottom-0 text-white p-2 font-semibold">Chalet</p>
+            </div>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-medium">Browse weekend trips</h2>
+        <p class="text-sm mt-1">Offers for the period: <span class="font-semibold">13 Dec. - 15 Dec.</span></p>
+        <div class="no-scroll mt-8 w-full flex gap-4 overflow-x-scroll">
+            <div class="min-w-72 w-72 overflow-hidden relative cursor-pointer">
+                <img class="w-full rounded-lg" src="./images/detatched.png" alt="weekend image">
+                <div class="font-semibold mt-3 text-sm flex items-center gap-1">
+                    <span class="px-2 py-0.5 bg-green-700 text-white rounded">10.0</span>
+                    <span>Unusual</span>
+                    <span class="font-normal text-xs">(109 reviews)</span>
+                </div>
+                <p class="mt-2 font-semibold leading-tight">Detached holiday home in the Eifel, allergy-friendly wooden...</p>
+                <p class="text-sm mt-1">Dahlem, North Rhine-Westphalia</p>
+                <p class="mt-3 font-semibold text-xl">216 €</p>
+                <p class="text-xs">for 2 nights</p>
+                <p class="text-xs">108 € per night</p>
+                <p class="text-xs">incl. taxes & fees</p>
+            </div>
+
+            <div class="min-w-72 w-72 overflow-hidden relative cursor-pointer">
+                <img class="w-full rounded-lg" src="./images/exclusive.png" alt="weekend image">
+                <div class="font-semibold mt-3 text-sm flex items-center gap-1">
+                    <span class="px-2 py-0.5 bg-green-700 text-white rounded">10.0</span>
+                    <span>Unusual</span>
+                    <span class="font-normal text-xs">(165 reviews)</span>
+                </div>
+                <p class="mt-2 font-semibold leading-tight">Exclusive bungalow in an idyllic location at the foot of Andechs...</p>
+                <p class="text-sm mt-1">Andechs, Bavaria</p>
+                <p class="mt-3 font-semibold text-xl">278 €</p>
+                <p class="text-xs">for 2 nights</p>
+                <p class="text-xs">139 € per night</p>
+                <p class="text-xs">incl. taxes & fees</p>
+            </div>
+
+            <div class="min-w-72 w-72 overflow-hidden relative cursor-pointer">
+                <img class="w-full rounded-lg" src="https://images.trvl-media.com/lodging/34000000/33620000/33610300/33610215/8ca9845e.jpg?impolicy=fcrop&w=600&h=400&p=1&q=high" alt="weekend image">
+                <div class="font-semibold mt-3 text-sm flex items-center gap-1">
+                    <span class="px-2 py-0.5 bg-green-700 text-white rounded">9.6</span>
+                    <span>Unusual</span>
+                    <span class="font-normal text-xs">(117 reviews)</span>
+                </div>
+                <p class="mt-2 font-semibold leading-tight">Beautiful holiday home Pets allowed Hiking Excursion Swimming lakes...</p>
+                <p class="text-sm mt-1">Mechernich, NRW</p>
+                <p class="mt-3 font-semibold text-xl">192 €</p>
+                <p class="text-xs">for 2 nights</p>
+                <p class="text-xs">98 € per night</p>
+                <p class="text-xs">incl. taxes & fees</p>
+            </div>
+
+            
+            <div class="min-w-72 w-72 overflow-hidden relative cursor-pointer">
+                <img class="w-full rounded-lg" src="https://images.trvl-media.com/lodging/35000000/34060000/34057200/34057159/368aa57f.jpg?impolicy=fcrop&w=600&h=400&p=1&q=high" alt="weekend image">
+                <div class="font-semibold mt-3 text-sm flex items-center gap-1">
+                    <span class="px-2 py-0.5 bg-green-700 text-white rounded">9.8</span>
+                    <span>Unusual</span>
+                    <span class="font-normal text-xs">(108 reviews)</span>
+                </div>
+                <p class="mt-2 font-semibold leading-tight">gem in an idyllic forest setting</p>
+                <p class="text-sm mt-1">Greaven, NRW</p>
+                <p class="mt-3 font-semibold text-xl">242 €</p>
+                <p class="text-xs">for 2 nights</p>
+                <p class="text-xs">121 € per night</p>
+                <p class="text-xs">incl. taxes & fees</p>
+            </div>
+
+            <div class="min-w-72 w-72 overflow-hidden relative cursor-pointer">
+                <img class="w-full rounded-lg" src="https://images.trvl-media.com/lodging/35000000/34560000/34556200/34556151/529fe453.jpg?impolicy=fcrop&w=600&h=400&p=1&q=high" alt="weekend image">
+                <div class="font-semibold mt-3 text-sm flex items-center gap-1">
+                    <span class="px-2 py-0.5 bg-green-700 text-white rounded">9.8</span>
+                    <span>Unusual</span>
+                    <span class="font-normal text-xs">(118 reviews)</span>
+                </div>
+                <p class="mt-2 font-semibold leading-tight">Comfort apartment (84 m), heat cabin, south-facing terrace, garden,...</p>
+                <p class="text-sm mt-1">Cuxhaven, NDS</p>
+                <p class="mt-3 font-semibold text-xl">437 €</p>
+                <p class="text-xs">for 2 nights</p>
+                <p class="text-xs">219 € per night</p>
+                <p class="text-xs">incl. taxes & fees</p>
+            </div>
+        </div>
+
+
     </main>
 
 
